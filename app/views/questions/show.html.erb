@@ -1,0 +1,19 @@
+タイトル : <%= @question.title %><br>
+質問内容 : <%= @question.content %><br>
+投稿者名 : <%= @question.name %>
+<%= form_with model: [@question, @answer], local: true do |form| %>
+  <div class="answer-content">
+    <%= form.text_area :content, placeholder:"回答する" %>
+  </div>
+  <div class="answer-name">
+    <%= form.text_field :name, placeholder:"ユーザー名" %>
+  </div>
+  <div class="answer-submit">
+    <%= form.submit 'Post'%>
+  </div>
+<% end %>
+
+<% @answers.each do |answer| %>
+  回答 : <%= answer.content %><br>
+  投稿者名 : <%= answer.name %><br><br>
+<% end %>

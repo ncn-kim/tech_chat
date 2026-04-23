@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .tech-header {
+  height: 65px;
+  width: 100%;
+  background-color: #1C3667;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .tech-home {
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  font-weight: 100;
+  letter-spacing: 1.8px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.header-contact {
+  height: 32px;
+  width: 80px;
+  line-height: 32px;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #3A3736;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  text-align: center;
+}
+

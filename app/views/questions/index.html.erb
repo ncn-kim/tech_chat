@@ -1,0 +1,30 @@
+<div class="index-main">
+  <div class="index-box">
+    <% @questions.each do |question| %>
+      <div class="box-all">
+        <div class="box-side">
+          <div class="comments">
+            <div class="comments-count">0</div>
+            <div class="comments-content">comments</div>
+          </div>
+        </div>
+
+        <div class="box-main">
+          <div class="box-main-upper">
+            <div class="box-main-title">
+              <%= link_to question.title, question_path(question) %>
+            </div>
+            <div class="box-main-name">
+              <%= question.name %>
+            </div>
+          </div>
+          <div class="box-main-lower">
+            <div class="box-main-content">
+              <%= question.content %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
