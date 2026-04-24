@@ -1,19 +1,52 @@
-タイトル : <%= @question.title %><br>
-質問内容 : <%= @question.content %><br>
-投稿者名 : <%= @question.name %>
-<%= form_with model: [@question, @answer], local: true do |form| %>
-  <div class="answer-content">
-    <%= form.text_area :content, placeholder:"回答する" %>
+<div class="show-all">
+  <div class="show-main">
+    <div class="answer-header"></div>
+    <div class="answer-master">
+      <div class="answer-upper">
+        <div class="question-posted">
+          <div class="qna-title">
+            <%= @question.title %>
+          </div>
+          <div class="qna-name">
+            <%= @question.name %>
+          </div>
+          <div class="qna-content">
+            <%= @question.content %>
+          </div>
+        </div>
+      </div>
+      <div class="answer-lower">
+        <div class="answer-comments">
+          <% @answers.each do |answer| %>
+            <div class="answer-comment">
+              <%= answer.content %><br>
+              By.<%= answer.name %><br>
+            </div>
+          <% end %>
+        </div>
+        <div class="answer-comment-post">
+          <%= form_with model: [@question, @answer], local: true, class:"answer-form" do |form| %>
+            <div class="answer-main">
+              <div class="answer-name">
+                <%= form.text_field :name, placeholder:"ユーザー名" %>
+              </div>
+              <div class="answer-content">
+                <%= form.text_area :content, placeholder:"回答する" %>
+              </div>
+            </div>
+            <div class="answer-side">
+              <div class="answer-submit">
+                <%= form.submit 'Post', class:"answer-submit-btn"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="answer-name">
-    <%= form.text_field :name, placeholder:"ユーザー名" %>
-  </div>
-  <div class="answer-submit">
-    <%= form.submit 'Post'%>
-  </div>
-<% end %>
+</div>
 
-<% @answers.each do |answer| %>
-  回答 : <%= answer.content %><br>
-  投稿者名 : <%= answer.name %><br><br>
-<% end %>
+
+
+
+
