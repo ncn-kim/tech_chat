@@ -4,9 +4,15 @@
     <div class="answer-master">
       <div class="answer-upper">
         <div class="question-posted">
-          <%= @question.title %><br>
-          <%= @question.name %><br>
-          <%= @question.content %>
+          <div class="qna-title">
+            <%= @question.title %>
+          </div>
+          <div class="qna-name">
+            <%= @question.name %>
+          </div>
+          <div class="qna-content">
+            <%= @question.content %>
+          </div>
         </div>
       </div>
       <div class="answer-lower">
